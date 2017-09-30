@@ -13,13 +13,13 @@ public class ComputerComponentShortDescriptionTest {
 	public void processorShortDescriptionTest() {
 		Processor processor = new ProcessorBuilder().build();
 		String stringUnderTest = processor.getShortDescription();
-		assertEquals(processor.getArticleNumber() + " * " + processor.getName() + " * " + processor.getPrice() + "€", stringUnderTest);
+		assertEquals(processor.getArticleNumber() + " * " + processor.getName() + " * " + processor.getPrice() + "â‚¬", stringUnderTest);
 	}
 	
 	@Test
 	public void mouseShortDescriptionTest() {
 		Mouse mouse = new MouseBuilder().build();
 		String stringUnderTest = mouse.getShortDescription();
-		assertEquals(mouse.getArticleNumber() + " * Mouse * " + mouse.getName() + " * " + mouse.getPrice() + "€", stringUnderTest);
+		assertEquals(mouse.getArticleNumber() + " * Mouse * " + mouse.getName() + " * " + mouse.getPrice() + "â‚¬", stringUnderTest);
 	}
 }

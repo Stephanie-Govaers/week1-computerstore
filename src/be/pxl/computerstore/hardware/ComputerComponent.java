@@ -42,7 +42,7 @@ public class ComputerComponent {
         sb.append("-");
 
         for (int i = 0; i < 3; i++) {
-            int number = rand.nextInt((9 - 1) + 1) + 1;
+            int number = rand.nextInt(9) + 1;
             sb.append(number);
         }
 
@@ -63,6 +63,15 @@ public class ComputerComponent {
 
         String outputString = "" + output;
 
+        return outputString;
+    }
+
+    public String getShortDescription(){
+        StringBuilder output = new StringBuilder();
+        output.append(articleNumber + " * " + name + " * " + price + "€");
+
+
+        String outputString = "" + output;
         return outputString;
     }
 

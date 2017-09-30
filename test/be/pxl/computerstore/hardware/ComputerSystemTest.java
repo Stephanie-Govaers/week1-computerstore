@@ -87,7 +87,7 @@ public class ComputerSystemTest {
 	@Test(expected=TooManyPeripheralsException.class)
 	public void tooManyPeripheralsExceptionIsThrownWhenAllowedNumberOfPeripheralsExceeded() throws TooManyPeripheralsException {
 		ComputerSystem computerSystem = new ComputerSystem();
-		for(int i = 0; i <= ComputerSystem.MAX_PERIPHERAL; i++) {
+		for(int i = 0; i <= ComputerSystem.MAX_PERIPHERALS; i++) {
 			computerSystem.addPeripheral(new MouseBuilder().build());
 		}
 	}

@@ -6,7 +6,7 @@ public class ComputerCase extends ComputerComponent {
     private Dimension dimension;
     private double weight;
 
-    protected ComputerCase(String vendor, String name, double price) {
+    public ComputerCase(String vendor, String name, double price) {
         super(vendor, name, price);
     }
 

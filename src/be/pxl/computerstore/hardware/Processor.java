@@ -4,7 +4,7 @@ public class Processor extends ComputerComponent {
 
     private double clockspeed;
 
-    protected Processor(String vendor, String name, double price, double clockspeed) {
+    public Processor(String vendor, String name, double price, double clockspeed) {
         super(vendor, name, price);
         setClockspeed(clockspeed);
     }

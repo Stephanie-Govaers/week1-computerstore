@@ -42,12 +42,16 @@ public class ComputerSystemConfigurator {
 			String artikelnummer = keyboard.nextLine();
 			ComputerComponent chosen = getComputerComponent(artikelnummer);
 			if (chosen instanceof Peripheral) {
-				computerSystem.addPeripheral((Peripheral) chosen);
+				try {
+					computerSystem.addPeripheral((Peripheral) chosen);
+				} catch (TooManyPeripheralsException e) {
+					System.out.println("You are adding to much peripherals");
+				}
 			}
 			System.out.println("Wil u nog een randaparaat toevoegen (j/n)?");
 			choosePeripheral = keyboard.nextLine().equals("j");
 		} while(choosePeripheral);
-		// TODO catch TooManyPeripheralsException
+
 		System.out.println("De door u gekozen computer:");
 		System.out.println(computerSystem);
 		keyboard.close();
@@ -60,7 +64,7 @@ public class ComputerSystemConfigurator {
 			}
 		}
 	}
-	
+
 	public static void displayProcessors() {
 		for (ComputerComponent component : Warehouse.computerComponents) {
 			if (component instanceof Processor) {
@@ -68,7 +72,7 @@ public class ComputerSystemConfigurator {
 			}
 		}
 	}
-	
+
 	public static void displayPeripherals() {
 		for (ComputerComponent component : Warehouse.computerComponents) {
 			if (component instanceof Peripheral) {
@@ -86,5 +90,5 @@ public class ComputerSystemConfigurator {
 		return null;
 	}
 
-	
+
 }
